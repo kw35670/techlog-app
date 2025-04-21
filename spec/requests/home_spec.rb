@@ -1,5 +1,5 @@
 require 'rails_helper'
- 
+
 RSpec.describe 'Home', type: :request do
   describe 'GET /' do
     it 'HTTP ステータス 200 を返す' do
