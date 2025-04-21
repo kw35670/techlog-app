@@ -51,15 +51,19 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'rubocop-rails-omakase', require: false
+
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'rubocop', require: false # 追加
-  gem 'rubocop-performance', require: false # 追加
-  gem 'rubocop-rails', require: false # 追加
-  gem 'rubocop-rspec' # 追加
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec'
   gem 'web-console'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
