@@ -39,6 +39,17 @@ describe User do
           end
         end
       end
+ 
+      describe '存在性の検証' do
+        context 'nicknameが空欄の場合' do
+          let(:nickname) { '' } # 空の文字列
+ 
+          it 'User オブジェクトは無効である' do
+            expect(user.valid?).to be(false)
+            expect(user.errors[:nickname]).to include("can't be blank")
+          end
+        end
+      end
     end
   end
 end
