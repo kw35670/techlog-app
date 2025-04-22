@@ -48,6 +48,10 @@ RSpec.describe 'Home', type: :system do
       it 'ログアウトリンクを表示する' do
         expect(page).to have_content('ログアウト')
       end
+
+      it 'ログ投稿リンクを表示しない' do
+        expect(page).not_to have_link('ログ投稿', href: '/users/sign_in')
+      end
  
       it 'ログアウトリンクが機能する' do
         click_button 'ログアウト'
