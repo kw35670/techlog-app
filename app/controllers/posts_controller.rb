@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @posts = Post.limit(10).order(created_at: :desc)
   end
 
   def new
@@ -14,7 +15,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = '投稿しました'
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:alert] = '投稿に失敗しました'
       render :new
