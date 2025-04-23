@@ -9,13 +9,11 @@
                         <p class="focus:outline-none text-sm leading-normal pt-2 text-gray-500">by <%= @post.user.nickname %></p>
                     </div>
 
-                    <!-- ここから追加 -->
                     <% if user_signed_in? %>
                     <% if @post.user_id == current_user.id %>
                     <%= button_to "削除", post_path(@post), method: :delete, class: "text-sm bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded hover:cursor-pointer" %>
                     <% end %>
                     <% end %>
-                    <!-- ここまで追加 -->
 
                 </div>
             </div>
